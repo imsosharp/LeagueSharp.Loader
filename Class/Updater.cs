@@ -63,6 +63,12 @@ namespace LeagueSharp.Loader.Class
 
         public static Tuple<bool, string> CheckLoaderVersion()
         {
+            //Uncomment this if you're a developer :^)
+            /*if (Directory.Exists(Path.Combine(Directories.CurrentDirectory, "noupdate")))
+            {
+                return new Tuple<bool, string>(false, "");
+            }*/
+
             try
             {
                 using (var client = new WebClient())
@@ -97,10 +103,12 @@ namespace LeagueSharp.Loader.Class
 
         public static Tuple<bool, bool?, string> UpdateCore(string LeagueOfLegendsFilePath, bool showMessages)
         {
-            if (Directory.Exists(Path.Combine(Directories.CurrentDirectory, "noupdate")))
+
+            //Uncomment this if you're a developer :^)
+            /*if (Directory.Exists(Path.Combine(Directories.CurrentDirectory, "noupdate")))
             {
                 return new Tuple<bool, bool?, string>(true, true, Utility.GetMultiLanguageText("NotUpdateNeeded"));
-            }
+            }*/
 
             try
             {
